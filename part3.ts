@@ -8,6 +8,7 @@
 // 1. User interfeysi
 // Foydalanuvchi tizimidagi asosiy ma'lumotlar uchun
 // ==============================
+
 interface User {
   id: number;
   username: string;
@@ -144,6 +145,7 @@ interface Event {
 // 9. Campaign interfeysi
 // Marketing kampaniyalari uchun, Event'ga o'xshash
 // ==============================
+
 interface Campaign {
   id: number;
   title: string;
@@ -162,6 +164,134 @@ interface Campaign {
 // Foydalanuvchi sharhlari uchun ma'lumotlar
 // ==============================
 interface Review {
+  id: number;
+  userId: number;
+  targetId: number;
+  rating: number;
+  comment: string;
+  createdAt: string;
+  isApproved: boolean;
+  targetType: "product" | "vendor" | "event";
+  helpfulVotes: number;
+  reported?: boolean;
+}
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------
+
+
+interface MainUser {
+  id: number,
+  username: string,
+  email?: string,
+  fullName?: string,
+  createdAt: string,
+}
+
+type Contact= {
+  phoneNumber?: string;
+  address?: string;
+}
+
+type Active = { 
+  isActive?: boolean;
+}
+
+interface About {
+  price?: number;
+  category?: string;
+  description: string;
+  isAvailable?: boolean;
+}
+
+interface Organize {
+  startDate: string;
+  organizerId: number;
+  title: string;
+}
+
+// 1 User
+interface User1 extends MainUser, Contact, Active {
+  lastLogin: string;
+  role: "user" | "admin" | "guest";
+}
+
+// 2 Customer
+interface Customer1 extends MainUser, Contact, Active{
+  purchaseHistory: number[];
+  loyaltyPoints: number;
+}
+
+
+// 3 Vendor 
+interface Vendor1 extends MainUser, Contact, Active{
+  companyName: string;
+  vendorRating: number;
+}
+
+// 4 Product 
+interface Product1 extends MainUser, About {
+  stockQuantity: number;
+  vendorId: number;
+  weight?: number;
+
+}
+
+// 5 InventoryItem
+interface InventoryItem1 extends MainUser, About {
+  stockQuantity: number;
+  warehouseId: number;
+  lastRestocked: string;
+}
+
+// 6 Order 
+interface Order1 {
+  id: number;
+  customerId: number;
+  products: number[];
+  totalPrice: number;
+  status: "pending" | "shipped" | "delivered" | "cancelled";
+  createdAt: string;
+  shippingAddress: string;
+  paymentMethod: string;
+  isPaid: boolean;
+  orderNotes?: string;
+} 
+
+// 7 Transaction 
+interface Transaction1 {
+  id: number;
+  customerId: number;
+  amount: number;
+  status: "completed" | "pending" | "failed";
+  createdAt: string;
+  paymentMethod: string;
+  isRefunded: boolean;
+  transactionType: "purchase" | "refund" | "deposit";
+  orderId?: number;
+  description?: string;
+}
+
+// 8 Event
+interface Event1 extends Organize, About {
+  id: number;
+  location: string;
+  isPublic: boolean;
+  maxParticipants: number;
+  registrationDeadline?: string;
+}
+
+// 9 Campaign
+interface Campaign1 extends Organize, About, Active {
+  id: number;
+  targetAudience: string;
+  budget: number;
+  endDate?: string;
+}
+
+// 10 Review
+interface Review1 {
   id: number;
   userId: number;
   targetId: number;

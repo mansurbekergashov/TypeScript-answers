@@ -1,8 +1,6 @@
 //1 Interface faqat obyekt uchun, type hammasiga
 //2 Interfaceda 1 nom bilan 2ta obyekt ochish mumkin, type da esa yo'q
 
-
-
 // ==============================
 // 2-masala sharti
 // ==============================
@@ -19,9 +17,9 @@ interface Music {
 
 const song: Music = {
   title: "Blinding Lights",
-  artist: 'The Weeknd',
+  artist: "The Weeknd",
   duration: 240,
-  genre: "Pop"
+  genre: "Pop",
 };
 
 // ==============================
@@ -58,7 +56,7 @@ interface Book {
 }
 
 const book: Book = {
-  title: "Atom odatlar",
+  title: "Atom odatlar | Atomic Habits",
   author: "James Clear",
   pages: 320,
   publishedYear: 2018,
@@ -73,7 +71,7 @@ const book: Book = {
 interface Video {
   title: string;
   views: number;
-  duration: number; // soniya
+  duration: number;
   uploadedAt?: string;
 }
 
@@ -138,10 +136,10 @@ interface App {
 }
 
 const application: App = {
-  name: "",
+  name: "Weather App",
   version: "1.0.0",
-  downloads: 500000,
-  developer: "OpenAI",
+  downloads: 500,
+  developer: "Muxlisa",
 };
 
 // ==============================
@@ -157,7 +155,12 @@ interface Member {
   isActive?: boolean;
 }
 
-const member: Member = {};
+const member: Member = {
+  id: 1,
+  name: "Behzod",
+  membershipType: "Standard",
+  isActive: true,
+};
 
 // ==============================
 // 10-masala sharti
@@ -172,7 +175,12 @@ interface Image {
   height: number;
 }
 
-const photo: Image = {};
+const photo: Image = {
+  url: "https://kun.uz/image.jpg",
+  alt: "Nature Img",
+  width: 1520,
+  height: 1080,
+};
 
 // ==============================
 // 11-masala sharti
@@ -187,7 +195,12 @@ interface Post {
   publishedDate?: string;
 }
 
-const article: Post = {};
+const article: Post = {
+  id: 1,
+  title: "TypeScript darslari",
+  content: "TypeScript - bu JavaScriptning ustiga qurilgan dasturlash tili.",
+  publishedDate: "2024-06-01",
+};
 
 // ==============================
 // 12-masala sharti
@@ -202,7 +215,12 @@ interface Course {
   instructor?: string;
 }
 
-const course: Course = {};
+const course: Course = {
+  id: 12,
+  title: "JavaScript darslari",
+  duration: 20,
+  instructor: "Zilola",
+};
 
 // ==============================
 // 13-masala sharti
@@ -217,7 +235,12 @@ interface Trip {
   isInternational?: boolean;
 }
 
-const trip: Trip = {};
+const trip: Trip = {
+  destination: "Paris",
+  duration: 7,
+  cost: 3000,
+  isInternational: true,
+};
 
 // ==============================
 // 14-masala sharti
@@ -232,7 +255,12 @@ interface EBook {
   format?: string;
 }
 
-const ebook: EBook = {};
+const ebook: EBook = {
+  title: "ELibrary",
+  author: "Xurshid",
+  fileSize: 5,
+  format: "PDF",
+};
 
 // ==============================
 // 15-masala sharti
@@ -247,7 +275,12 @@ interface Workout {
   intensity?: string;
 }
 
-const workout: Workout = {};
+const workout: Workout = {
+  id: 23,
+  name: "Fitness",
+  duration: 45,
+  intensity: "High",
+};
 
 // ==============================
 // 16-masala sharti
@@ -262,7 +295,11 @@ interface Order {
   status?: string;
 }
 
-const order: Order = {};
+const order: Order = {
+  id: 14,
+  customerName: "Otabek",
+  totalPrice: 50000,
+};
 
 // ==============================
 // 17-masala sharti
@@ -277,7 +314,12 @@ interface Student {
   isEnrolled?: boolean;
 }
 
-const student: Student = {};
+const student: Student = {
+  id: 1,
+  name: "Gulnoza",
+  grade: 3,
+  isEnrolled: true,
+};
 
 // ==============================
 // 18-masala sharti
@@ -292,7 +334,12 @@ interface Game {
   genre?: string;
 }
 
-const game: Game = {};
+const game: Game = {
+  title: "Adventure",
+  platform: "Steam",
+  releaseYear: 2022,
+  genre: "Adventure",
+};
 
 // ==============================
 // 19-masala sharti
@@ -300,14 +347,19 @@ const game: Game = {};
 // Sevara yangi tadbirlar ro‘yxatini tuzmoqchi. Ammo `Event` obyektlarini `number` qilib, hamma tadbirlarni raqamlarga aylantirib yuborgan 🎉
 // Unga `Event` interfeysiga mos bitta tadbir obyektini yozib bering, bayramlar davom etsin 🥳
 
-interface Event {
+interface Eventt {
   id: number;
   name: string;
   date: string;
   location?: string;
 }
 
-const event: Event = {};
+const event1: Eventt = {
+  id: 5,
+  name: "Concert",
+  date: "2024-07-20",
+  location: "Tashkent City Park",
+};
 
 // ==============================
 // 20-masala sharti
@@ -322,7 +374,12 @@ interface Album {
   releaseDate?: string;
 }
 
-const album: Album = {};
+const album: Album = {
+  title: "New Album",
+  artist: "Jamol",
+  tracks: 10,
+  releaseDate: "2025-08-12",
+};
 
 // ==============================
 // 21-masala sharti
@@ -337,7 +394,12 @@ interface Lesson {
   topic?: string;
 }
 
-const lesson: Lesson = {};
+const lesson: Lesson = {
+  id: 3,
+  title: "TypeScript lessons",
+  duration: 60,
+  topic: "Programming",
+};
 
 // ==============================
 // 22-masala sharti
@@ -352,7 +414,12 @@ interface Blog {
   publishDate?: string;
 }
 
-const blogPost: Blog = {};
+const blogPost: Blog = {
+  id: "123",
+  title: "Nodir's Notes",
+  author: "Nodir",
+  publishDate: "2025-08-12",
+};
 
 // ==============================
 // 23-masala sharti
@@ -362,12 +429,17 @@ const blogPost: Blog = {};
 
 interface Tour {
   id: number;
- destination: string;
- price: number;
- durationDays?: number;
+  destination: string;
+  price: number;
+  durationDays?: number;
 }
 
-const tour: Tour = {};
+const tour: Tour = {
+  id: 7,
+  destination: "Italy",
+  price: 2500,
+  durationDays: 7,
+};
 
 // ============================
 // 24-masala sharti
@@ -376,28 +448,36 @@ const tour: Tour = {};
 // Unga `Dish` interfeysiga mos bitta taom obyektini yozib bering, oshxona shuhrati oshirila! 😋
 
 interface Dish {
- id: number;
- name: string;
- price: number;
- isSpicy?: boolean;
+  id: number;
+  name: string;
+  price: number;
+  isSpicy?: boolean;
 }
 
-const dish: Dish = {};
+const dish: Dish = {
+  id: 4,
+  name: "Burger",
+  price: 45000,
+};
 
 // ==============================
 // 25-masala sharti
 // ==============================
 // Ulug‘bek yangi kutubxona tizimida jurnallar ro‘yxatini yuritmoqchi. Lekin `Magazine` obyektlarini `null` qilib, barcha jurnallarni “mavjud emas” deb belgilab qo‘ygan 📰
-// Sizdan `Magazine` nterfeysiga mos bitta jurnal obyektini yozib bering, nashriyot xursand bo‘lsin 📇
+// Sizdan `Magazine` interfeysiga mos bitta jurnal obyektini yozib bering, nashriyot xursand bo‘lsin 📇
 
 interface Magazine {
- id: number;
- title: string;
- issue: number;
- publisher?: string;
+  id: number;
+  title: string;
+  issue: number;
+  publisher?: string;
 }
 
-const magazine: Magazine = {};
+const magazine: Magazine = {
+  id: 9,
+  title: "Today",
+  issue: 45,
+};
 
 // ==============================
 // 26-masala sharti
@@ -406,13 +486,18 @@ const magazine: Magazine = {};
 // Unga `Exercise` nterfeysiga mos bitta mashq obyektini yozib bering, sog‘lom turmush tarzi targ‘ib qilinsin 💪
 
 interface Exercise {
- id: number;
- name: string;
- reps: number;
- equipment?: string;
+  id: number;
+  name: string;
+  reps: number;
+  equipment?: string;
 }
 
-const exercise: Exercise = {};
+const exercise: Exercise = {
+  id: 11,
+  name: "Push ups",
+  reps: 20,
+  equipment: "None",
+};
 
 // ==============================
 // 27-masala sharti
@@ -421,13 +506,18 @@ const exercise: Exercise = {};
 // Sizdan `Film` nterfeysiga mos bitta film obyektini yozib bering, kinosevarlar xursand bo‘lsin 🎥
 
 interface Film {
- id: number;
- title: string;
- genre: string;
- duration?: number; // daqiqalarda
+  id: number;
+  title: string;
+  genre: string;
+  duration?: number; // daqiqalarda
 }
 
-const movie: Film = {};
+const movie: Film = {
+  id: 21,
+  title: "Tenet",
+  genre: "Science Fiction",
+  duration: 140,
+};
 
 // ==============================
 // 28-masala sharti
@@ -436,13 +526,18 @@ const movie: Film = {};
 // Unga `Clothing` nterfeysiga mos bitta kiyim obyektini yozib bering, moda olami porlasin 🌟
 
 interface Clothing {
- id: number;
- name: string;
- price: number;
- size?: string;
+  id: number;
+  name: string;
+  price: number;
+  size?: string;
 }
 
-const clothing: Clothing = {};
+const clothing: Clothing = {
+  id: 15,
+  name: "T-shirt",
+  price: 80000,
+  size: "XL",
+};
 
 // ==============================
 // 29-masala sharti
@@ -451,13 +546,18 @@ const clothing: Clothing = {};
 // Sizdan `Concert` interfeysiga mos bitta konsert obyektini yozib bering, musiqa oqimi to‘xtamasin 🎸
 
 interface Concert {
- id: number;
- name: string;
- date: string;
- venue?: string;
+  id: number;
+  name: string;
+  date: string;
+  venue?: string;
 }
 
-const concert: Concert = {};
+const concert: Concert = {
+  id: 6,
+  name: "New Festival",
+  date: "2025-09-15",
+  venue: "Fergan City Stadium",
+};
 
 // ==============================
 // 30-masala sharti
@@ -466,12 +566,16 @@ const concert: Concert = {};
 // Unga `Class` nterfeysiga mos bitta guruh obyektini yozib bering, ta’lim sifati oshirila! 🎓
 
 interface Class {
- id: number;
- name: string;
- capacity: number;
+  id: number;
+  name: string;
+  capacity: number;
 }
 
-const class: Class = {};
+const class1: Class = {
+  id: 2,
+  name: "Maths",
+  capacity: 30,
+};
 
 // ==============================
 // 31-masala sharti
@@ -480,13 +584,18 @@ const class: Class = {};
 // Unga `TravelPost` nterfeysiga mos bitta sayohat maqolasi obyektini yozib bering, sarguzashtlar o‘quvchilarga yetib bors! 🌍
 
 interface TravelPost {
- id: number;
- title: string;
- destination: string;
- author?: string;
+  id: number;
+  title: string;
+  destination: string;
+  author?: string;
 }
 
-const travelPost: TravelPost = {};
+const travelPost: TravelPost = {
+  id: 8,
+  title: "My Journey to Japan",
+  destination: "Japan",
+  author: "Miraziz",
+};
 
 // ==============================
 // 32-masala sharti
@@ -495,13 +604,18 @@ const travelPost: TravelPost = {};
 // Unga `Audiobook` nterfeysiga mos bitta audiokitob obyektini yozib bering, tinglovchilar xursand bo‘lsin 📖
 
 interface Audiobook {
- title: string;
- author: string;
- duration: number; // soatlarda
- narrator?: string;
+  title: string;
+  author: string;
+  duration: number; // soatlarda
+  narrator?: string;
 }
 
-const audiobook: Audiobook = {};
+const audiobook: Audiobook = {
+  title: "Nur borki soya bor",
+  author: "Utkir Khoshimov",
+  duration: 8,
+  narrator: "Ali Azizov",
+};
 
 // ==============================
 // 33-masala sharti
@@ -510,13 +624,18 @@ const audiobook: Audiobook = {};
 // Unga `Beverage` nterfeysiga mos bitta ichimlik obyektini yozib bering, chanqoqlar quvonsin 🍹
 
 interface Beverage {
- id: number;
- name: string;
- price: number;
- isCarbonated?: boolean;
+  id: number;
+  name: string;
+  price: number;
+  isCarbonated?: boolean;
 }
 
-const beverage: Beverage = {};
+const beverage: Beverage = {
+  id: 3,
+  name: "Lemonade",
+  price: 15000,
+  isCarbonated: false,
+};
 
 // ==============================
 // 34-masala sharti
@@ -525,13 +644,18 @@ const beverage: Beverage = {};
 // Unga `OnlineGame` nterfeysiga mos bitta o‘yin obyektini yozib bering, o‘yinchilar xursand bo‘lsin 🕹️
 
 interface OnlineGame {
- id: number;
- title: string;
- genre: string;
- playersOnline?: number;
+  id: number;
+  title: string;
+  genre: string;
+  playersOnline?: number;
 }
 
-const onlineGame: OnlineGame = {};
+const onlineGame: OnlineGame = {
+  id: 10,
+  title: "Battle Arena",
+  genre: "Action",
+  playersOnline: 5000,
+};
 
 // ==============================
 // 35-masala sharti
@@ -540,13 +664,18 @@ const onlineGame: OnlineGame = {};
 // Unga `FilmEntry` nterfeysiga mos bitta film obyektini yozib bering, kinosevarlar xursand bo‘lsin 🎞
 
 interface FilmEntry {
- id: number;
- title: string;
- director: string;
- category?: string;
+  id: number;
+  title: string;
+  director: string;
+  category?: string;
 }
 
-const filmEntry: FilmEntry = {};
+const filmEntry: FilmEntry = {
+  id: 15,
+  title: "The Matrix",
+  director: "The Wachowskis",
+  category: "Science Fiction",
+};
 
 // ==============================
 // 36-masala sharti
@@ -555,13 +684,18 @@ const filmEntry: FilmEntry = {};
 // Unga `Feature` nterfeysiga mos bitta maqola obyektini yozib bering, o‘quvchilar xursand bo‘lsin ✍️
 
 interface Feature {
- id: number;
- title: string;
- author: string;
- topic?: string;
+  id: number;
+  title: string;
+  author: string;
+  topic?: string;
 }
 
-const feature: Feature = {};
+const feature: Feature = {
+  id: 4,
+  title: "Technology",
+  author: "Zuhra",
+  topic: "Latest Trends",
+};
 
 // ==============================
 // 37-masala sharti
@@ -570,13 +704,17 @@ const feature: Feature = {};
 // Unga `Competition` nterfeysiga mos bitta musobaqa obyektini yozib bering, sportchilar xursand bo‘lsin 🏆
 
 interface Competition {
- id: number;
- name: string شما d;
- date: string;
- prizePool?: number;
+  id: number;
+  name: string;
+  date: string;
+  prizePool?: number;
 }
 
-const competition: Competition = {};
+const competition: Competition = {
+  id: 22,
+  name: "City Marathon",
+  date: "2025-10-05",
+};
 
 // ==============================
 // 38-masala sharti
@@ -585,13 +723,17 @@ const competition: Competition = {};
 // Unga `FashionItem` nterfeysiga mos bitta kiyim obyektini yozib bering, moda olami porlasin 🌟
 
 interface FashionItem {
- id: number;
- name: string;
- brand: string;
- price?: number;
+  id: number;
+  name: string;
+  brand: string;
+  price?: number;
 }
 
-const fashionItem: FashionItem = {};
+const fashionItem: FashionItem = {
+  id: 18,
+  name: "Trousers",
+  brand: "Prada",
+};
 
 // ==============================
 // .39-masala sharti
@@ -600,13 +742,18 @@ const fashionItem: FashionItem = {};
 // Unga `BookReview` nterfeysiga mos bitta sharh obyektini yozib bering, o‘quvchilar xursand bo‘lsin 📝
 
 interface BookReview {
- id: number;
- bookTitle: string;
- rating: number;
- comment?: string;
+  id: number;
+  bookTitle: string;
+  rating: number;
+  comment?: string;
 }
 
-const bookReview: BookReview = {};
+const bookReview: BookReview = {
+  id: 30,
+  bookTitle: "1984",
+  rating: 8.5,
+  comment: "Best novel",
+};
 
 // ==============================
 // .40-masala sharti
@@ -615,13 +762,18 @@ const bookReview: BookReview = {};
 // Unga `Itinerary` nterfeysiga mos bitta sayohat rejasi obyektini yozib bering, sarguzashtlar boshlansin ✈️
 
 interface Itinerary {
- id: number;
- destination: string;
- days: number;
- activities?: string;
+  id: number;
+  destination: string;
+  days: number;
+  activities?: string;
 }
 
-const itinerary: Itinerary = {};
+const itinerary: Itinerary = {
+  id: 12,
+  destination: "Spain",
+  days: 14,
+  activities: "Sightseeing, Beach",
+};
 
 // ==============================
 // 41-masala sharti
@@ -630,13 +782,18 @@ const itinerary: Itinerary = {};
 // Unga `Accessory` interfeysiga mos bitta aksessuar obyektini yozib bering, do‘kon porlasin 🛍️
 
 interface Accessory {
- id: number;
- name: string;
- price: number;
- material?: string;
+  id: number;
+  name: string;
+  price: number;
+  material?: string;
 }
 
-const accessory: Accessory = {};
+const accessory: Accessory = {
+  id: 27,
+  name: "Watch",
+  price: 150000,
+  material: "Metal",
+};
 
 // ==============================
 // 42-masala sharti
@@ -645,13 +802,18 @@ const accessory: Accessory = {};
 // Unga `Tournament` nterfeysiga mos bitta turnir obyektini yozib bering, o‘yinchilar xursand bo‘lsin 🏆
 
 interface Tournament {
- id: number;
- name: string;
- game: string;
- prize?: number;
+  id: number;
+  name: string;
+  game: string;
+  prize?: number;
 }
 
-const tournament: Tournament = {};
+const tournament: Tournament = {
+  id: 33,
+  name: "Summer Cup",
+  game: "Football",
+  prize: 10000,
+};
 
 // ==============================
 // 43-masala sharti
@@ -660,13 +822,18 @@ const tournament: Tournament = {};
 // Unga `Test` nterfeysiga mos bitta imtihon obyektini yozib bering, ta’lim sifati oshirila!
 
 interface Test {
- id: number;
+  id: number;
   subject: string;
   maxScore: number;
   date?: string;
 }
 
-const test: Test = {};
+const test: Test = {
+  id: 5,
+  subject: "Maths",
+  maxScore: 100,
+  date: "2025-12-12",
+};
 
 // ==============================
 // 44-masala sharti
@@ -675,13 +842,17 @@ const test: Test = {};
 // Unga `VideoClip` nterfeysiga mos bitta video obyektini yozib bering, tomoshabinlar xursand bo‘lsin 📹
 
 interface VideoClip {
- id: number;
- title: string;
- duration: number; // soniyalarda
- resolution?: string;
+  id: number;
+  title: string;
+  duration: number; // soniyalarda
+  resolution?: string;
 }
 
-const videoClip: VideoClip = {};
+const videoClip: VideoClip = {
+  id: 16,
+  title: "Nature Walk",
+  duration: 300,
+};
 
 // ==============================
 // 45-masala sharti
@@ -690,13 +861,18 @@ const videoClip: VideoClip = {};
 // Unga `Scoreboard` nterfeysiga mos bitta natija obyektini yozib bering, sport muxlislari xursand bo‘lsin 📊
 
 interface Scoreboard {
- id: number;
- match: string;
- score: string;
- winner?: string;
+  id: number;
+  match: string;
+  score: string;
+  winner?: string;
 }
 
-const scoreboard: Scoreboard = {};
+const scoreboard: Scoreboard = {
+  id: 2,
+  match: "Team A vs Team B",
+  score: "3-2",
+  winner: "Team A",
+};
 
 // ==============================
 // 46-masala sharti
@@ -705,12 +881,16 @@ const scoreboard: Scoreboard = {};
 // Unga `Outfit` nterfeysiga mos bitta kiyim to‘plami obyektini yozib bering, moda olami yorqinlashsin! 🌟
 
 interface Outfit {
- id: number;
- name: string;
- price: number;
+  id: number;
+  name: string;
+  price: number;
 }
 
-const outfit: Outfit = {};
+const outfit: Outfit = {
+  id: 28,
+  name: "New Brand Collection",
+  price: 400000,
+};
 
 // ==============================
 // 47-masala sharti
@@ -719,13 +899,17 @@ const outfit: Outfit = {};
 // Unga `Genre` nterfeysiga mos bitta kategoriya obyektini yozib bering, o‘quvchilar xursand bo‘lsin! 📖
 
 interface Genre {
- id: number;
- name: string;
- description: string;
- popularity?: number;
+  id: number;
+  name: string;
+  description: string;
+  popularity?: number;
 }
 
-const genre: Genre = {};
+const genre: Genre = {
+  id: 1,
+  name: "Action",
+  description: "Fast and exciting stories",
+};
 
 // ==============================
 // 48-masala sharti
@@ -734,13 +918,18 @@ const genre: Genre = {};
 // Unga `Excursion` nterfeysiga mos bitta ekskursiya obyektini yozib bering, sayyohlar xursand bo‘lsin! 🌍
 
 interface Excursion {
- id: number;
- name: string;
- price: number;
- durationHours?: number;
+  id: number;
+  name: string;
+  price: number;
+  durationHours?: number;
 }
 
-const excursion: Excursion = {};
+const excursion: Excursion = {
+  id: 15,
+  name: "New Tour",
+  price: 350,
+  durationHours: 12,
+};
 
 // ==============================
 // 49-masala sharti
@@ -749,13 +938,18 @@ const excursion: Excursion = {};
 // Unga `TVShow` nterfeysiga mos bitta serial obyektini yozib bering, tomoshabinlar xursand bo‘lsin! 🎬
 
 interface TVShow {
- id: number;
- title: string;
- episodes: number;
- genre?: string;
+  id: number;
+  title: string;
+  episodes: number;
+  genre?: string;
 }
 
-const tvShow: TVShow = {};
+const tvShow: TVShow = {
+  id: 9,
+  title: "Lord of the Rings",
+  episodes: 24,
+  genre: "Fantasy",
+};
 
 // ==============================
 // 50-masala sharti
@@ -764,10 +958,15 @@ const tvShow: TVShow = {};
 // Unga `Furniture` nterfeysiga mos bitta mebel obyektini yozib bering, do‘kon porlasin! 🏠
 
 interface Furniture {
- id: number;
- name: string;
- price: number;
- material?: string;
+  id: number;
+  name: string;
+  price: number;
+  material?: string;
 }
 
-const furniture: Furniture = {};
+const furniture: Furniture = {
+  id: 20,
+  name: "Sofa",
+  price: 250000,
+  material: "Leather",
+};

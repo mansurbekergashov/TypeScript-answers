@@ -3,7 +3,14 @@
 // ==============================
 // Ro‘zimuhammad yangi o‘qituvchi haqida ma’lumot kiritdi. Quyida obyekt berilgan, unga mos `Teacher` interfeysini yozing. Balki Ro‘zimuhammad bu safar o‘qituvchini eslab qolar 😊
 
-const teacher = {
+interface Teacher {
+  name: string;
+  subject: string[];
+  experience: number;
+  isCertified?: boolean;
+}
+
+const teacher: Teacher = {
   name: "Ali Valiev",
   subject: ["Matematika", "Fizika"],
   experience: 5,
@@ -15,7 +22,14 @@ const teacher = {
 // ==============================
 // Subhoniddin o‘zining sevimli qo‘shig‘ini TypeScript’da ro‘yxatga oldi. Quyida obyekt berilgan, unga mos `Music` interfeysini yozing. Notalar ham, Subhoniddin ham xursand bo‘lsin 🎶
 
-const song = {
+interface Music {
+  title: string;
+  artist: string;
+  duration: number;
+  genre?: string;
+}
+
+const song: Music = {
   title: "Yor-Yor",
   artist: "Ozodbek Nazarbekov",
   duration: 240,
@@ -27,7 +41,14 @@ const song = {
 // ==============================
 // Diyorbek restoran menyusiga yangi taom qo‘shdi. Quyida obyekt berilgan, unga mos `MenuItem` interfeysini yozing. Oshqozonlar sizdan minnatdor bo‘ladi 😋
 
-const item = {
+interface Item {
+  id: number;
+  name: string;
+  price: number;
+  isVegetarian?: boolean;
+}
+
+const item: Item = {
   id: 1,
   name: "Osh",
   price: 25000,
@@ -39,7 +60,14 @@ const item = {
 // ==============================
 // Feruza uyidagi sevimli kitobini ro‘yxatga oldi. Quyida obyekt berilgan, unga mos `Book` interfeysini yozing. Kitobxonlar xursand bo‘lsin 📚
 
-const book = {
+interface Book {
+  title: string;
+  author: string;
+  pages: number;
+  publishedYear?: number;
+}
+
+const book: Book = {
   title: "Alpomish",
   author: "Xalq dastani",
   pages: 120,
@@ -51,7 +79,14 @@ const book = {
 // ==============================
 // Asilbek YouTube’da yangi video joyladi. Quyida obyekt berilgan, unga mos `Video` interfeysini yozing. Balki millionta ko‘rish to‘plar 🎥
 
-const vlog = {
+interface Vlog {
+  title: string;
+  views: number;
+  duration: number;
+  uploadedAt?: string;
+}
+
+const vlog: Vlog = {
   title: "Toshkentda bir kun",
   views: 15000,
   duration: 600,
@@ -63,7 +98,14 @@ const vlog = {
 // ==============================
 // Nigora onlayn do‘koniga yangi mahsulot qo‘shdi. Quyida obyekt berilgan, unga mos `Product` interfeysini yozing. Iqtisodiy inqirozning oldi olinsin 💸
 
-const product = {
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  description?: string;
+}
+
+const product: Product = {
   id: 101,
   name: "Smartfon",
   price: 2500000,
@@ -75,7 +117,14 @@ const product = {
 // ==============================
 // Sardor kino saytiga yangi film qo‘shdi. Quyida obyekt berilgan, unga mos `Movie` interfeysini yozing. Rejissor xafa bo‘lib ketmasin 🎬
 
-const film = {
+interface Movie {
+  title: string;
+  director: string;
+  year: number;
+  rating?: number;
+}
+
+const film: Movie = {
   title: "Baxt uchun kurash",
   director: "Shuhrat Abbasov",
   year: 1980,
@@ -87,7 +136,14 @@ const film = {
 // ==============================
 // Muxlisa yangi mobil ilova ishlab chiqdi. Quyida obyekt berilgan, unga mos `App` interfeysini yozing. Ilova muvaffaqiyatli bo‘lsin 📱
 
-const application = {
+interface App {
+  name: string;
+  version: string;
+  downloads: number;
+  developer: string;
+}
+
+const application: App = {
   name: "ChatApp",
   version: "1.0.0",
   downloads: 5000,
@@ -99,7 +155,14 @@ const application = {
 // ==============================
 // Behzod sport klubiga yangi a’zo sifatida qo‘shildi. Quyida obyekt berilgan, unga mos `Member` interfeysini yozing. Sportchilar xursand bo‘lsin 🏋️‍♂️
 
-const member = {
+interface Member {
+  id: number;
+  name: string;
+  membershipType: string;
+  isActive: boolean;
+}
+
+const member: Member = {
   id: 23,
   name: "Behzod Xolmatov",
   membershipType: "Premium",
@@ -111,7 +174,14 @@ const member = {
 // ==============================
 // Dilfuza galereya sahifasiga yangi rasm qo‘shdi. Quyida obyekt berilgan, unga mos `Image` interfeysini yozing. Rasmlar chiroyli ko‘rinsin 🖼️
 
-const photo = {
+interface Photo {
+  url: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+const photo: Photo = {
   url: "https://example.com/image.jpg",
   alt: "Tog‘ manzarasi",
   width: 1920,
@@ -123,7 +193,14 @@ const photo = {
 // ==============================
 // Alisher o‘z blogiga yangi maqola yozdi. Quyida obyekt berilgan, unga mos `Post` interfeysini yozing. O‘quvchilar xursand bo‘lsin 📝
 
-const article = {
+interface Aeticle {
+  id: number;
+  title: string;
+  content: string;
+  publishedDate?: string;
+}
+
+const article: Aeticle = {
   id: 5,
   title: "TypeScriptni o‘rganish bo‘yicha maslahatlar",
   content: "TypeScript haqida foydali maslahatlar...",
@@ -135,7 +212,14 @@ const article = {
 // ==============================
 // Zilola onlayn kurslar platformasiga yangi kurs qo‘shdi. Quyida obyekt berilgan, unga mos `Course` interfeysini yozing. Bilim ulashsin 📚
 
-const course = {
+interface Course {
+  id: number;
+  title: string;
+  duration: number;
+  instructor: string;
+}
+
+const course: Course = {
   id: 10,
   title: "Web dasturlash asoslari",
   duration: 20,
@@ -147,7 +231,14 @@ const course = {
 // ==============================
 // Farrux o‘zining sayohatlarini ro‘yxatga oldi. Quyida obyekt berilgan, unga mos `Trip` interfeysini yozing. Sarguzashtlar davom etsin ✈️
 
-const trip = {
+interface Trip {
+  destination: string;
+  duration: number;
+  cost: number;
+  isInternational: boolean;
+}
+
+const trip: Trip = {
   destination: "Istanbul",
   duration: 7,
   cost: 1500,
@@ -159,7 +250,14 @@ const trip = {
 // ==============================
 // Xurshid onlayn kutubxonaga yangi elektron kitob qo‘shdi. Quyida obyekt berilgan, unga mos `EBook` interfeysini yozing. Kitobxonlar xursand bo‘lsin 📖
 
-const ebook = {
+interface EBook {
+  title: string;
+  author: string;
+  fileSize: number;
+  format: string;
+}
+
+const ebook: EBook = {
   title: "O‘tgan kunlar",
   author: "Abdulla Qodiriy",
   fileSize: 2.5,
@@ -171,7 +269,14 @@ const ebook = {
 // ==============================
 // Madina fitnes ilovasiga yangi mashq qo‘shdi. Quyida obyekt berilgan, unga mos `Workout` interfeysini yozing. Sog‘lom hayot davom etsin 💪
 
-const workout = {
+interface Workout {
+  id: number;
+  name: string;
+  duration: number;
+  intensity: string;
+}
+
+const workout: Workout = {
   id: 3,
   name: "Yoga seansi",
   duration: 45,
@@ -183,7 +288,14 @@ const workout = {
 // ==============================
 // Otabek onlayn do‘koniga yangi buyurtma kiritdi. Quyida obyekt berilgan, unga mos `Order` interfeysini yozing. Savdo muvaffaqiyatli bo‘lsin 💼
 
-const order = {
+interface Order {
+  id: number;
+  customerName: string;
+  totalPrice: number;
+  status: string;
+}
+
+const order: Order = {
   id: 202,
   customerName: "Otabek Sattorov",
   totalPrice: 350000,
@@ -195,7 +307,14 @@ const order = {
 // ==============================
 // Gulnoza ta’lim platformasiga yangi talaba qo‘shdi. Quyida obyekt berilgan, unga mos `Student` interfeysini yozing. Ta’lim davom etsin 📚
 
-const student = {
+interface Student {
+  id: number;
+  name: string;
+  grade: number;
+  isEnrolled: boolean;
+}
+
+const student: Student = {
   id: 45,
   name: "Gulnoza Saidova",
   grade: 85,
@@ -207,7 +326,14 @@ const student = {
 // ==============================
 // Shaxzod o‘yin platformasiga yangi o‘yin qo‘shdi. Quyida obyekt berilgan, unga mos `Game` interfeysini yozing. O‘yinchilar xursand bo‘lsin 🎮
 
-const game = {
+interface Game {
+  title: string;
+  platform: string;
+  releaseYear: number;
+  genre?: string;
+}
+
+const game: Game = {
   title: "Cyber Quest",
   platform: "PC",
   releaseYear: 2023,
@@ -219,7 +345,14 @@ const game = {
 // ==============================
 // Sevara tadbirlar ro‘yxatiga yangi tadbir qo‘shdi. Quyida obyekt berilgan, unga mos `Event` interfeysini yozing. Bayramlar davom etsin 🎉
 
-const event = {
+interface Event1 {
+  id: number;
+  name: string;
+  date: string;
+  location: string;
+}
+
+const event1: Event1 = {
   id: 15,
   name: "Yangi yil kechasi",
   date: "2025-12-31",
@@ -231,7 +364,14 @@ const event = {
 // ==============================
 // Jamol yangi musiqa albomini ro‘yxatga oldi. Quyida obyekt berilgan, unga mos `Album` interfeysini yozing. Musiqa yangilansin 🎼
 
-const album = {
+interface Album {
+  title: string;
+  artist: string;
+  tracks: number;
+  releaseDate: string;
+}
+
+const album: Album = {
   title: "Yulduzlar ostida",
   artist: "Sevara Nazarkhan",
   tracks: 12,
@@ -243,7 +383,14 @@ const album = {
 // ==============================
 // Laziza ta’lim platformasiga yangi dars qo‘shdi. Quyida obyekt berilgan, unga mos `Lesson` interfeysini yozing. Ta’lim sifatli bo‘lsin 🎓
 
-const lesson = {
+interface Lesson {
+  id: number;
+  title: string;
+  duration: number;
+  topic: string;
+}
+
+const lesson: Lesson = {
   id: 7,
   title: "React asoslari",
   duration: 90,
@@ -255,7 +402,14 @@ const lesson = {
 // ==============================
 // Nodir blog saytiga yangi maqola joyladi. Quyida obyekt berilgan, unga mos `Blog` interfeysini yozing. O‘quvchilar xursand bo‘lsin 📝
 
-const blogPost = {
+interface Blog {
+  id: string;
+  title: string;
+  author: string;
+  publishDate?: string;
+}
+
+const blogPost: Blog = {
   id: "post-123",
   title: "JavaScriptda xatolar bilan ishlash",
   author: "Nodir Xasanov",
@@ -267,7 +421,14 @@ const blogPost = {
 // ==============================
 // Shohjahon sayohat agentligiga yangi tur qo‘shdi. Quyida obyekt berilgan, unga mos `Tour` interfeysini yozing. Sarguzashtlar boshlansin 🌍
 
-const tour = {
+interface Tour {
+  id: number;
+  destination: string;
+  price: number;
+  durationDays: number;
+}
+
+const tour: Tour = {
   id: 8,
   destination: "Parij",
   price: 2000,
@@ -279,7 +440,14 @@ const tour = {
 // ==============================
 // Ma’mura restoran menyusiga yangi taom qo‘shdi. Quyida obyekt berilgan, unga mos `Dish` interfeysini yozing. Oshxona shuhrati oshirila! 😋
 
-const dish = {
+interface Dish {
+  id: number;
+  name: string;
+  price: number;
+  isSpicy: boolean;
+}
+
+const dish: Dish = {
   id: 12,
   name: "Manti",
   price: 20000,
@@ -291,7 +459,14 @@ const dish = {
 // ==============================
 // Ulug‘bek kutubxonaga yangi jurnal qo‘shdi. Quyida obyekt berilgan, unga mos `Magazine` interfeysini yozing. Nashriyot xursand bo‘lsin 📇
 
-const magazine = {
+interface Magazine {
+  id: number;
+  title: string;
+  issue: number;
+  publisher: string;
+}
+
+const magazine: Magazine = {
   id: 101,
   title: "Ilm va Fan",
   issue: 45,
@@ -303,7 +478,14 @@ const magazine = {
 // ==============================
 // Dilbar fitnes dasturiga yangi mashq qo‘shdi. Quyida obyekt berilgan, unga mos `Exercise` interfeysini yozing. Sog‘lom turmush tarzi targ‘ib qilinsin 💪
 
-const exercise = {
+interface Exercise {
+  id: number;
+  name: string;
+  reps: number;
+  equipment?: string;
+}
+
+const exercise: Exercise = {
   id: 4,
   name: "Push-ups",
   reps: 20,
@@ -315,7 +497,14 @@ const exercise = {
 // ==============================
 // Sherzod kino portaliga yangi film qo‘shdi. Quyida obyekt berilgan, unga mos `Film` interfeysini yozing. Kinosevarlar xursand bo‘lsin 🎥
 
-const movie = {
+interface Film {
+  id: number;
+  title: string;
+  genre: string;
+  duration: number;
+}
+
+const movie: Film = {
   id: 25,
   title: "Yulduzli osmon",
   genre: "Drama",
@@ -327,7 +516,14 @@ const movie = {
 // ==============================
 // Nilufar onlayn do‘konga yangi kiyim qo‘shdi. Quyida obyekt berilgan, unga mos `Clothing` interfeysini yozing. Moda olami porlasin 🌟
 
-const clothing = {
+interface Clothing {
+  id: number;
+  name: string;
+  price: number;
+  size: string;
+}
+
+const clothing: Clothing = {
   id: 305,
   name: "Klassik ko‘ylak",
   price: 150000,
@@ -339,7 +535,14 @@ const clothing = {
 // ==============================
 // Oybek musiqa festivallariga yangi konsert qo‘shdi. Quyida obyekt berilgan, unga mos `Concert` interfeysini yozing. Musiqa oqimi to‘xtamasin 🎸
 
-const concert = {
+interface Concert {
+  id: number;
+  name: string;
+  date: string;
+  venue: string;
+}
+
+const concert: Concert = {
   id: 9,
   name: "Rock Fest",
   date: "2025-07-15",
@@ -351,7 +554,13 @@ const concert = {
 // ==============================
 // Gulchehra ta’lim markaziga yangi guruh qo‘shdi. Quyida obyekt berilgan, unga mos `Class` interfeysini yozing. Ta’lim sifati oshirila! 🎓
 
-const classObj = {
+interface Class {
+  id: number;
+  name: string;
+  capacity: number;
+}
+
+const classObj: Class = {
   id: 3,
   name: "Python dasturlash",
   capacity: 20,
@@ -362,7 +571,14 @@ const classObj = {
 // ==============================
 // Miraziz sayohat blogiga yangi maqola yozdi. Quyida obyekt berilgan, unga mos `TravelPost` interfeysini yozing. Sarguzashtlar o‘quvchilarga yetib borsin! 🌍
 
-const travelPost = {
+interface TravelPost {
+  id: number;
+  title: string;
+  destination: string;
+  author?: string;
+}
+
+const travelPost: TravelPost = {
   id: 17,
   title: "Samarqandda bir hafta",
   destination: "Samarqand",
@@ -374,7 +590,14 @@ const travelPost = {
 // ==============================
 // Xadicha onlayn kutubxonaga yangi audiokitob qo‘shdi. Quyida obyekt berilgan, unga mos `Audiobook` interfeysini yozing. Tinglovchilar xursand bo‘lsin 🎧
 
-const audiobook = {
+interface Audiobook {
+  title: string;
+  author: string;
+  duration: number;
+  narrator?: string;
+}
+
+const audiobook: Audiobook = {
   title: "Xamsa",
   author: "Alisher Navoiy",
   duration: 10,
@@ -386,7 +609,14 @@ const audiobook = {
 // ==============================
 // Rustam restoran menyusiga yangi ichimlik qo‘shdi. Quyida obyekt berilgan, unga mos `Beverage` interfeysini yozing. Chanqoqlar quvonsin 🍹
 
-const beverage = {
+interface Beverage {
+  id: number;
+  name: string;
+  price: number;
+  isCarbonated?: boolean;
+}
+
+const beverage: Beverage = {
   id: 7,
   name: "Mojito",
   price: 15000,
@@ -398,7 +628,14 @@ const beverage = {
 // ==============================
 // Mohira onlayn o‘yin platformasiga yangi o‘yin qo‘shdi. Quyida obyekt berilgan, unga mos `OnlineGame` interfeysini yozing. O‘yinchilar xursand bo‘lsin 🕹️
 
-const onlineGame = {
+interface OnlineGame {
+  id: number;
+  title: string;
+  genre: string;
+  playersOnline?: number;
+}
+
+const onlineGame: OnlineGame = {
   id: 50,
   title: "Battle Arena",
   genre: "Multiplayer",
@@ -410,7 +647,14 @@ const onlineGame = {
 // ==============================
 // Anvar kino festivaliga yangi film qo‘shdi. Quyida obyekt berilgan, unga mos `FilmEntry` interfeysini yozing. Kinosevarlar xursand bo‘lsin 🎞
 
-const filmEntry = {
+interface FilmEntry {
+  id: number;
+  title: string;
+  director: string;
+  category: string;
+}
+
+const filmEntry: FilmEntry = {
   id: 33,
   title: "Hayot yo‘li",
   director: "Zoir Xolmatov",
@@ -422,7 +666,14 @@ const filmEntry = {
 // ==============================
 // Zuhra onlayn jurnalga yangi maqola qo‘shdi. Quyida obyekt berilgan, unga mos `Feature` interfeysini yozing. O‘quvchilar xursand bo‘lsin ✍️
 
-const feature = {
+interface Feature {
+  id: number;
+  title: string;
+  author: string;
+  topic?: string;
+}
+
+const feature: Feature = {
   id: 22,
   title: "Yangi texnologiyalar",
   author: "Zuhra",
@@ -434,7 +685,14 @@ const feature = {
 // ==============================
 // Tohir sport musobaqalariga yangi musobaqa qo‘shdi. Quyida obyekt berilgan, unga mos `Competition` interfeysini yozing. Sportchilar xursand bo‘lsin 🏆
 
-const competition = {
+interface Competition {
+  id: number;
+  name: string;
+  date: string;
+  prizePool: number;
+}
+
+const competition: Competition = {
   id: 12,
   name: "Toshkent Marathon",
   date: "2025-09-10",
@@ -446,7 +704,14 @@ const competition = {
 // ==============================
 // Mavluda moda katalogiga yangi kiyim qo‘shdi. Quyida obyekt berilgan, unga mos `FashionItem` interfeysini yozing. Moda olami porlasin 🌟
 
-const fashionItem = {
+interface FashionItem {
+  id: number;
+  name: string;
+  brand: string;
+  price: number;
+}
+
+const fashionItem: FashionItem = {
   id: 108,
   name: "Yozgi libos",
   brand: "Local Brand",
@@ -458,7 +723,14 @@ const fashionItem = {
 // ==============================
 // Shavkat kutubxonaga yangi kitob sharhi qo‘shdi. Quyida obyekt berilgan, unga mos `BookReview` interfeysini yozing. O‘quvchilar xursand bo‘lsin 📝
 
-const bookReview = {
+interface BookReview {
+  id: number;
+  bookTitle: string;
+  rating: number;
+  comment?: string;
+}
+
+const bookReview: BookReview = {
   id: 9,
   bookTitle: "Boburnoma",
   rating: 9,
@@ -470,7 +742,14 @@ const bookReview = {
 // ==============================
 // Dilrabo sayohat rejalariga yangi reja qo‘shdi. Quyida obyekt berilgan, unga mos `Itinerary` interfeysini yozing. Sarguzashtlar boshlansin ✈️
 
-const itinerary = {
+interface Itinerary {
+  id: number;
+  destination: string;
+  days: number;
+  activities?: string;
+}
+
+const itinerary: Itinerary = {
   id: 6,
   destination: "Buxoro",
   days: 3,
@@ -482,7 +761,14 @@ const itinerary = {
 // ==============================
 // Kamola onlayn do‘konga yangi aksessuar qo‘shdi. Quyida obyekt berilgan, unga mos `Accessory` interfeysini yozing. Do‘kon porlasin 🛍️
 
-const accessory = {
+interface Accessory {
+  id: number;
+  name: string;
+  price: number;
+  material?: string;
+}
+
+const accessory: Accessory = {
   id: 45,
   name: "Soat",
   price: 300000,
@@ -494,7 +780,14 @@ const accessory = {
 // ==============================
 // Shohzod o‘yin turnirlariga yangi turnir qo‘shdi. Quyida obyekt berilgan, unga mos `Tournament` interfeysini yozing. O‘yinchilar xursand bo‘lsin 🏆
 
-const tournament = {
+interface Tournament {
+  id: number;
+  name: string;
+  game: string;
+  prize?: number;
+}
+
+const tournament: Tournament = {
   id: 14,
   name: "eSports League",
   game: "Dota 2",
@@ -506,7 +799,14 @@ const tournament = {
 // ==============================
 // Gulbahor ta’lim dasturiga yangi imtihon qo‘shdi. Quyida obyekt berilgan, unga mos `Test` interfeysini yozing. Ta’lim sifati oshirila!
 
-const test = {
+interface Test {
+  id: number;
+  subject: string;
+  maxScore: number;
+  date: string;
+}
+
+const test: Test = {
   id: 8,
   subject: "Matematika",
   maxScore: 100,
@@ -518,7 +818,14 @@ const test = {
 // ==============================
 // Xurshida onlayn galereyaga yangi video qo‘shdi. Quyida obyekt berilgan, unga mos `VideoClip` interfeysini yozing. Tomoshabinlar xursand bo‘lsin 📹
 
-const videoClip = {
+interface VideoClip {
+  id: number;
+  title: string;
+  duration: number;
+  resolution?: string;
+}
+
+const videoClip: VideoClip = {
   id: 19,
   title: "Toshkent kechasi",
   duration: 300,
@@ -530,7 +837,14 @@ const videoClip = {
 // ==============================
 // O‘tkir sport jurnaliga yangi musobaqa natijasini qo‘shdi. Quyida obyekt berilgan, unga mos `Scoreboard` interfeysini yozing. Sport muxlislari xursand bo‘lsin 📊
 
-const scoreboard = {
+interface Scoreboard {
+  id: number;
+  match: string;
+  score: string;
+  winner: string;
+}
+
+const scoreboard: Scoreboard = {
   id: 5,
   match: "Toshkent vs Samarqand",
   score: "3:2",
@@ -542,7 +856,13 @@ const scoreboard = {
 // ==============================
 // Ma’suma moda blogiga yangi kiyim to‘plami qo‘shdi. Quyida obyekt berilgan, unga mos `Outfit` interfeysini yozing. Moda olami yorqinlashsin! 🌟
 
-const outfit = {
+interface Outfit {
+  id: number;
+  name: string;
+  price: number;
+}
+
+const outfit: Outfit = {
   id: 11,
   name: "Casual Look",
   price: 250000,
@@ -553,7 +873,14 @@ const outfit = {
 // ==============================
 // Farhod kutubxonaga yangi kitob kategoriyasi qo‘shdi. Quyida obyekt berilgan, unga mos `Genre` interfeysini yozing. O‘quvchilar xursand bo‘lsin! 📖
 
-const genre = {
+interface Genre {
+  id: number;
+  name: string;
+  description: string;
+  popularity?: number;
+}
+
+const genre: Genre = {
   id: 3,
   name: "Fantastika",
   description: "Ilmiy fantastika asarlari",
@@ -565,7 +892,14 @@ const genre = {
 // ==============================
 // Nargiza sayohat agentligiga yangi ekskursiya qo‘shdi. Quyida obyekt berilgan, unga mos `Excursion` interfeysini yozing. Sayyohlar xursand bo‘lsin! 🌍
 
-const excursion = {
+interface Excursion {
+  id: number;
+  name: string;
+  price: number;
+  durationHours: number;
+}
+
+const excursion: Excursion = {
   id: 22,
   name: "Xiva ziyorati",
   price: 500000,
@@ -577,7 +911,14 @@ const excursion = {
 // ==============================
 // Zafar kino saytiga yangi serial qo‘shdi. Quyida obyekt berilgan, unga mos `TVShow` interfeysini yozing. Tomoshabinlar xursand bo‘lsin! 🎬
 
-const tvShow = {
+interface TVShow {
+  id: number;
+  title: string;
+  episodes: number;
+  genre?: string;
+}
+
+const tvShow: TVShow = {
   id: 7,
   title: "Yangi asr",
   episodes: 24,
@@ -588,6 +929,13 @@ const tvShow = {
 // 50-masala sharti
 // ==============================
 // Dilshoda onlayn do‘konga yangi mebel qo‘shdi. Quyida obyekt berilgan, unga mos `Furniture` interfeysini yozing. Do‘kon porlasin! 🏠
+
+interface Furniture {
+  id: number;
+  name: string;
+  price: number;
+  material?: string;
+}
 
 const furniture = {
   id: 99,

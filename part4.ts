@@ -1,4 +1,4 @@
-// Quyida 20ta type yozilgan siz ushbu typelarda yozilgan takrorlanishlarni oldini olishingiz kerak. type, & foydalaning.
+// Quyida 4ta type yozilgan siz ushbu typelarda yozilgan takrorlanishlarni oldini olishingiz kerak. type, & foydalaning.
 
 // Reusable bo'lgan type va interfacelarga aylantiring.
 
@@ -243,3 +243,183 @@ type UserSettings = {
   theme: "light" | "dark";
   notifications: boolean;
 };
+
+// ---------------------------------------------------------------------------------------------------------
+
+type User = {
+  id: number;
+  username: string;
+  email?: string;
+};
+
+type id = {
+  id: number;
+};
+
+type Info = {
+  fullName?: string;
+  phoneNumber?: string;
+  companyName?: string;
+  rating?: number;
+  duration?: number;
+};
+
+type Item = {
+  title?: string;
+  price?: number;
+  category?: string;
+};
+
+type Order = {
+  customerId?: number;
+  totalPrice?: number;
+  date?: string;
+};
+
+// 1 BasicUser
+type BasicUser1 = User &
+  id & {
+    createdAt: string;
+    isActive: boolean;
+  };
+
+// 2 CustomerProfile
+type CustomerProfile1 = User & Info & id;
+
+// 3 VendorInfo
+type VendorInfo1 = User & Info & id;
+
+// 4 ProductDetails
+type ProductDetails1 = Item &
+  User &
+  id & {
+    stockQuantity: number;
+  };
+
+// 5 OrderInfo
+type OrderInfo1 = Order &
+  id & {
+    status: "pending" | "shipped" | "delivered";
+    orderDate: string;
+  };
+
+// 6 MediaItem
+type MediaItem1 = Item &
+  id & {
+    duration: number;
+    format: "video" | "audio" | "image";
+    creator: string;
+  };
+
+// 7 VideoContent
+type VideoContent1 = Item &
+  id & {
+    duration: number;
+    views: number;
+    resolution: string;
+  };
+
+// 8 EventDetails
+type EventDetails1 = Item &
+  id & {
+    date: string;
+    location: string;
+    organizerId: number;
+  };
+
+// 9 CourseInfo
+type CourseInfo1 = Item &
+  id & {
+    instructor: string;
+    durationHours: number;
+    level: "beginner" | "intermediate" | "advanced";
+  };
+
+// 10 ReviewItem
+type ReviewItem1 = Order &
+  id & {
+    rating: number;
+    comment: string;
+    targetType: "product" | "course";
+  };
+
+// 11 TransactionRecord
+type TransactionRecord1 = Order &
+  id & {
+    type: "purchase" | "refund";
+    status: "success" | "failed";
+    amount: number;
+  };
+
+// 12 InventoryEntry
+type InventoryEntry1 = Item &
+  id & {
+    productId: number;
+    quantity: number;
+    warehouse: string;
+    lastUpdated: string;
+  };
+
+// 13 CampaignData
+type CampaignData1 = Item &
+  id & {
+    budget: number;
+    startDate: string;
+    targetAudience: string;
+  };
+
+// 14 SubscriptionInfo
+type SubscriptionInfo1 = Item &
+  id & {
+    price: number;
+    duration: "monthly" | "yearly";
+    features: string[];
+  };
+
+// 15 NotificationData
+type NotificationData1 = Order &
+  id & {
+    message: string;
+    type: "info" | "warning";
+    read: boolean;
+  };
+
+// 16 SupportTicket
+type SupportTicket1 = Order &
+  id & {
+    subject: string;
+    status: "open" | "closed";
+    priority: "low" | "high";
+  };
+
+// 17 BlogArticle
+type BlogArticle1 = Item &
+  id & {
+    author: string;
+    status: "draft" | "published";
+    tags: string[];
+  };
+
+// 18 PaymentDetails
+type PaymentDetails1 = Order &
+  id & {
+    type: string;
+    cardNumber: string;
+    isDefault: boolean;
+  };
+
+// 19 ShippingDetails
+type ShippingDetails1 = Order &
+  id & {
+    address: string;
+    method: "standard" | "express";
+    cost: number;
+  };
+
+// 20 UserSettings
+type UserSettings1 = User &
+  id & {
+    privacy: string;
+    theme: "light" | "dark";
+    notifications: boolean;
+  };
