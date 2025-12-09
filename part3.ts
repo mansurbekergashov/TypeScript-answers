@@ -4,35 +4,51 @@
 
 // Nihoyatda toza kod bo'lsin
 
+
+type Troles = "user" | "admin" | "guest";
+type Tstatus = "pending" | "shipped" | "delivered" | "cancelled" | "completed" | "failed";
+type TNumberArray = number[];
+type TtransactionType = "purchase" | "refund" | "deposit";
+
+interface IBase {
+  id: number;
+  createdAt: string;
+  username?: string;
+  email?: string;
+  fullName?: string;
+  isActive?: boolean;
+  name?: string;
+  price?: number;
+  category?: string;
+  description?: string;
+  stockQuantity?: number;
+  isAvailable?: boolean;
+  customerId?: number;
+  title?: string;
+  organizerId?: number;
+  startDate?: string;
+}
+
+
+
 // ==============================
 // 1. User interfeysi
 // Foydalanuvchi tizimidagi asosiy ma'lumotlar uchun
 // ==============================
 
-interface User {
-  id: number;
-  username: string;
-  email: string;
-  fullName: string;
-  createdAt: string;
-  isActive: boolean;
+interface User extends IBase {
   phoneNumber?: string;
   address?: string;
   lastLogin: string;
-  role: "user" | "admin" | "guest";
+  role: Troles;
 }
 
 // ==============================
 // 2. Customer interfeysi
 // Mijozlar uchun maxsus ma'lumotlar, User'ga o'xshash
 // ==============================
-interface Customer {
-  id: number;
-  username: string;
-  email: string;
-  fullName: string;
-  createdAt: string;
-  isActive?: boolean;
+
+interface Customer extends IBase {
   phoneNumber: string;
   address: string;
   purchaseHistory: number[];
@@ -43,13 +59,8 @@ interface Customer {
 // 3. Vendor interfeysi
 // Sotuvchilar uchun ma'lumotlar, User va Customer'ga o'xshash
 // ==============================
-interface Vendor {
-  id: number;
-  username: string;
-  email: string;
-  fullName: string;
-  createdAt: string;
-  isActive: boolean;
+
+interface Vendor extends IBase {
   phoneNumber?: string;
   address: string;
   companyName: string;
@@ -60,15 +71,8 @@ interface Vendor {
 // 4. Product interfeysi
 // Mahsulotlar katalogi uchun asosiy ma'lumotlar
 // ==============================
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  category: string;
-  description: string;
-  stockQuantity: number;
-  createdAt: string;
-  isAvailable: boolean;
+
+interface Product extends IBase {
   vendorId: number;
   weight?: number;
 }
@@ -77,15 +81,8 @@ interface Product {
 // 5. InventoryItem interfeysi
 // Ombor mahsulotlari uchun, Product'ga o'xshash
 // ==============================
-interface InventoryItem {
-  id: number;
-  name: string;
-  price: number;
-  category: string;
-  description?: string;
-  stockQuantity: number;
-  createdAt: string;
-  isAvailable: boolean;
+
+interface InventoryItem extends IBase {
   warehouseId: number;
   lastRestocked: string;
 }
@@ -94,13 +91,11 @@ interface InventoryItem {
 // 6. Order interfeysi
 // Buyurtmalar uchun ma'lumotlar
 // ==============================
-interface Order {
-  id: number;
-  customerId: number;
-  products: number[];
+
+interface Order extends IBase {
+  products: TNumberArray;
   totalPrice: number;
-  status: "pending" | "shipped" | "delivered" | "cancelled";
-  createdAt: string;
+  status: Tstatus;
   shippingAddress: string;
   paymentMethod: string;
   isPaid: boolean;
@@ -111,31 +106,23 @@ interface Order {
 // 7. Transaction interfeysi
 // Moliyaviy operatsiyalar uchun, Order'ga o'xshash
 // ==============================
-interface Transaction {
-  id: number;
-  customerId: number;
+
+interface Transaction extends IBase {
   amount: number;
-  status: "completed" | "pending" | "failed";
-  createdAt: string;
+  status: Tstatus;
   paymentMethod: string;
   isRefunded: boolean;
-  transactionType: "purchase" | "refund" | "deposit";
+  transactionType: TtransactionType;
   orderId?: number;
-  description?: string;
 }
 
 // ==============================
 // 8. Event interfeysi
 // Tadbirlar va faoliyatlar uchun ma'lumotlar
 // ==============================
-interface Event {
-  id: number;
-  title: string;
-  description: string;
-  createdAt: string;
-  startDate: string;
+
+interface Event extends IBase {
   location: string;
-  organizerId: number;
   isPublic: boolean;
   maxParticipants: number;
   registrationDeadline?: string;
@@ -146,15 +133,8 @@ interface Event {
 // Marketing kampaniyalari uchun, Event'ga o'xshash
 // ==============================
 
-interface Campaign {
-  id: number;
-  title: string;
-  description: string;
-  createdAt: string;
-  startDate: string;
+interface Campaign extends IBase {
   targetAudience: string;
-  organizerId: number;
-  isActive: boolean;
   budget: number;
   endDate?: string;
 }
@@ -163,141 +143,12 @@ interface Campaign {
 // 10. Review interfeysi
 // Foydalanuvchi sharhlari uchun ma'lumotlar
 // ==============================
-interface Review {
-  id: number;
+
+interface Review extends IBase {
   userId: number;
   targetId: number;
   rating: number;
   comment: string;
-  createdAt: string;
-  isApproved: boolean;
-  targetType: "product" | "vendor" | "event";
-  helpfulVotes: number;
-  reported?: boolean;
-}
-
-
-
-//-------------------------------------------------------------------------------------------------------------------------
-
-
-interface MainUser {
-  id: number,
-  username: string,
-  email?: string,
-  fullName?: string,
-  createdAt: string,
-}
-
-type Contact= {
-  phoneNumber?: string;
-  address?: string;
-}
-
-type Active = { 
-  isActive?: boolean;
-}
-
-interface About {
-  price?: number;
-  category?: string;
-  description: string;
-  isAvailable?: boolean;
-}
-
-interface Organize {
-  startDate: string;
-  organizerId: number;
-  title: string;
-}
-
-// 1 User
-interface User1 extends MainUser, Contact, Active {
-  lastLogin: string;
-  role: "user" | "admin" | "guest";
-}
-
-// 2 Customer
-interface Customer1 extends MainUser, Contact, Active{
-  purchaseHistory: number[];
-  loyaltyPoints: number;
-}
-
-
-// 3 Vendor 
-interface Vendor1 extends MainUser, Contact, Active{
-  companyName: string;
-  vendorRating: number;
-}
-
-// 4 Product 
-interface Product1 extends MainUser, About {
-  stockQuantity: number;
-  vendorId: number;
-  weight?: number;
-
-}
-
-// 5 InventoryItem
-interface InventoryItem1 extends MainUser, About {
-  stockQuantity: number;
-  warehouseId: number;
-  lastRestocked: string;
-}
-
-// 6 Order 
-interface Order1 {
-  id: number;
-  customerId: number;
-  products: number[];
-  totalPrice: number;
-  status: "pending" | "shipped" | "delivered" | "cancelled";
-  createdAt: string;
-  shippingAddress: string;
-  paymentMethod: string;
-  isPaid: boolean;
-  orderNotes?: string;
-} 
-
-// 7 Transaction 
-interface Transaction1 {
-  id: number;
-  customerId: number;
-  amount: number;
-  status: "completed" | "pending" | "failed";
-  createdAt: string;
-  paymentMethod: string;
-  isRefunded: boolean;
-  transactionType: "purchase" | "refund" | "deposit";
-  orderId?: number;
-  description?: string;
-}
-
-// 8 Event
-interface Event1 extends Organize, About {
-  id: number;
-  location: string;
-  isPublic: boolean;
-  maxParticipants: number;
-  registrationDeadline?: string;
-}
-
-// 9 Campaign
-interface Campaign1 extends Organize, About, Active {
-  id: number;
-  targetAudience: string;
-  budget: number;
-  endDate?: string;
-}
-
-// 10 Review
-interface Review1 {
-  id: number;
-  userId: number;
-  targetId: number;
-  rating: number;
-  comment: string;
-  createdAt: string;
   isApproved: boolean;
   targetType: "product" | "vendor" | "event";
   helpfulVotes: number;
